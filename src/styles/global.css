@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"); /* Dark Colors */
+/* Light Colors */
+.dark {
+  --header-bg: #0a0a12;
+  --aside-bg: #0a0a12;
+  --body-bg: #0a0a12;
+  --secondary-body-bg: #1a1a22;
+  --footer-bg: #0a0a12;
+  --hover-bg: #000038;
+  --main-color: #e74596;
+  --secondary-color: #9c27b0;
+  --error-color: #ff0000;
+  --main-text-color: #ff8bcb;
+  --secondary-text-color: #f096ff;
+  --text-color: #f2effa;
+  --contrast-text-color: #000000;
+  --black-text-color: #000000;
+  --white-text-color: #f2effa;
+  --text-color: #f2effa;
+  --shadow-color: #000000;
+  --stroke-color: #1a1a22;
+  --gradient: #000020 fixed linear-gradient(#000014, #000028 70%, rgba(231, 69, 150, 0.3333333333));
+}
+
+.light {
+  --header-bg: #fafafa;
+  --aside-bg: #fafafa;
+  --body-bg: #fafafa;
+  --secondary-body-bg: #d6d6d6;
+  --footer-bg: #fafafa;
+  --hover-bg: #fafafa;
+  --main-color: #e74596;
+  --secondary-color: #9c27b0;
+  --error-color: #ff0000;
+  --main-text-color: #ff8bcb;
+  --secondary-text-color: #f096ff;
+  --text-color: #000000;
+  --contrast-text-color: #f2effa;
+  --black-text-color: #000000;
+  --white-text-color: #f2effa;
+  --text-color: #000000;
+  --shadow-color: #000000;
+  --stroke-color: #1a1a22;
+  --gradient: #f2effa fixed linear-gradient(#f2effa, #f2effa 70%, rgba(231, 69, 150, 0.3333333333));
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html body {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  font-family: "Ubuntu", sans-serif;
+}
+html body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 12px;
+}
+html body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+html body::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+html body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-text-color);
+}
+html body .skip-to-content {
+  background-color: var(--main-color);
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  font: 1.6rem "Ubuntu", sans-serif;
+  height: 1px;
+  left: -999px;
+  outline: none;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: auto;
+  transition: all 0.3s ease-in-out;
+  width: 1px;
+  z-index: -1;
+}
+html body .skip-to-content:focus, html body .skip-to-content:active {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  z-index: 5;
+}
+html body a {
+  text-decoration: none;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  scroll-margin-top: 8rem;
+}
+
+#app {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
+.center {
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  grid-column: 1/-1;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.hide {
+  -webkit-animation: fadeOut 0.3s ease-in-out forwards;
+          animation: fadeOut 0.3s ease-in-out forwards;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.show {
+  -webkit-animation: fadeIn 0.3s ease-in-out forwards;
+          animation: fadeIn 0.3s ease-in-out forwards;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.skeleton {
+  -webkit-animation: bg-skeleton 1s linear infinite alternate;
+          animation: bg-skeleton 1s linear infinite alternate;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@-webkit-keyframes bg-skeleton {
+  0% {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes bg-skeleton {
+  0% {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+:focus-visible {
+  outline: 2px dashed var(--main-color);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+  outline-offset: 0px;
+}
+
+:focus {
+  outline: 2px dashed var(--main-color);
+  outline-offset: 3px;
+}
+
+.swal2-popup {
+  background-color: var(--secondary-body-bg) !important;
+}
+
+.swal2-title {
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  color: var(--text-color) !important;
+}
+
+.swal2-timer-progress-bar {
+  background: var(--main-color);
+}
+
+.swal2-success * {
+  border-color: var(--main-color) !important;
+}
+
+.swal2-success span {
+  background-color: var(--main-color) !important;
+}/*# sourceMappingURL=global.css.map */

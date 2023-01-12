@@ -1,0 +1,9 @@
+.theme__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  grid-area: button;
+}
+.theme__btn svg {
+  fill: var(--main-color);
+}/*# sourceMappingURL=buttonTheme.module.css.map */
